@@ -12,3 +12,4 @@ Start up a VPN container with your VPN configuration, then any containers you wa
 
 And your second container will have all networking via the vpn container. Double check with ping/traceroute/mtr if you want to verify this
 
+If you would like to use it with docker-compose, see the included docker-compose.yml file. The trick is port forwards need to happen on the vpn container; since --net=container makes them all share the same exact network stack, and docker-compose doesn't allow the port option on any container/service network modes.
